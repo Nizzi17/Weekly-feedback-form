@@ -105,14 +105,169 @@
   <script>
   const departmentDivisionMap = {
     "Derivatives and Risk Management": [
-      "Financial Derivatives Division",
-      "Commodities Exchanges and Products Division",
-      "Risk Management Division"
+      "HOD,s Office",
+      "Financial Derivatives",
+      "Commodities Exchanges & Products",
+      "Risk Management",
+      "Strategy Development"
+    ],
+    "Procurement & Support Services": [
+      "Premises & Maintanance",
+      "Power Supply",
+      "Procurement Support",
+      "Transport & Postal Services",
+      "Tendering & Contracts",
+      "Document Management",
+      "Purchasing and Supply"
+    ],
+    "Director General's Office": [
+      "Research & Analysis",
+      "Special Duties",
+      "Special Assistant to DG",
+      "Office of the Director",
+      "General Administration",
+      "Legal & Operations"
+    ],
+    "Enforcement": [
+      "Investigation",
+      "Prosecution",
+      "Investor Protection",
+      "HOD Enforcement"
+    ],
+    "Office of the Executive Commisioner, Corporate Services": [
+      "Security Services",
+      "Executive Commisioner (Corporate Services) Office",
+      "S.A ECCS"
+    ],
+    "Office of the Executive Commissioner, Legal & Enforcement": [
+      "Executive Commisioner (Legal & Enforcement) Office",
+      "Office for  Advocacy of Small Business Capital Formation",
+      "T. A  to ECLE",
+      "Office of Small Business Advocacy"
+    ],
+    "Office of the Executive Commissioner, Operations": [
+      "Executive Commisioner (Operations) Office",
+      "S.A Office of the Executive Commissioner, Operations"
+    ],
+    "External Relations": [
+      "Public Relations",
+      "HOD External Relations",
+      "Corporate Communications",
+      "Stakeholder Complaints Management",
+      "Market Relations"
     ],
     "Finance and Accounts": [
-      "Final Accounts and Reconciliation",
-      "Treasurey",
-      "Salaries, wages and pension"
+      "Treasury",
+      "HOD F&A",
+      "Payroll & Pensions",
+      "Final Account",
+      "Budgetary Planning"
+    ],
+    "Financial Standards and Corporate Governance": [
+      "Financial Services",
+      "Non-Financial Services",
+      "HOD FS&CG",
+      "Disclosure and Compliance",
+      "Financial Analysis"
+    ],
+    "Investment Management Services": [
+      "IMS Legal",
+      "HOD IMS",
+      "Funds Authorisation"
+    ],
+    "Human Resources Management": [
+      "Employee Relations",
+      "HR Analytics & Records",
+      "Workforce Planning",
+      "Performance Managementh",
+      "HOD HR",
+      "Learning & Career Development"
+    ],
+    "Information Technology": [
+      "HOD IT",
+      "IT Governance",
+      "Infrastructure & Operations",
+      "IT Security",
+      "Enterprise Architecture & Innovation",
+      "IT Business Office",
+      "Hardware Support & Admin",
+      "Network & Communication",
+      "Applications"
+    ],
+    "Internal Audit": [
+      "Budgetary Control",
+      "HOD Internal Audit",
+      "System Audit",
+      "Financial Audit"
+    ],
+    "Legal": [
+      "Budgetary Control",
+      "HOD Internal Audit",
+      "System Audit",
+      "Financial Audit"
+    ],
+    "Market Development": [
+      "Product Development",
+      "Financial Inclusion & Investor Education",
+      "HOD MD",
+      "Non-Interest Capital Market Products",
+      "New Products",
+      "Financial Inclusion",
+      "Investor Education"
+    ],
+    "Monitoring": [
+      "Fund Supervision",
+      "Inspectorate",
+      "Post Offer Supervision",
+      "AML/CFT",
+      "Unclaimed Monies",
+      "HOD Monitoring"
+    ],
+    "Nigerian Capital Market Institute": [
+      "Security Unit",
+      "Programmes",
+      "MD NCMI",
+      "HR, Admin & Finance",
+      "Secretary, NCMI",
+      "Marketing, Consultancy, Research and Publication"
+    ],
+    "Office of The Chief Economist": [
+      "International Relations",
+      "Economic Research & Intelligence",
+      "Library",
+      "Economic Research & Policy Managment",
+      "HOD OCE",
+      "Policy Management"
+    ],
+    "Office of Secretary to the Commission": [
+      "Commission's Secretary",
+      "Board Secretariat Services",
+      "APD"
+    ],
+    "Registration, Exchanges, Market Infrastruture": [
+      "REMI Legal",
+      "HOD REMI",
+      "Exchanges & Market Infrastructure",
+      "Registration"
+    ],
+    "Securities & Investment Services": [
+      "HOD SIS",
+      "Securities Offerings",
+      "Mergers & Aquisition",
+      "SIS Legal",
+      "Municipal Bonds Advocacy Office"
+    ],
+    "Strategy": [
+      "STRATEGY DEVELOPMENT",
+      "Strategy Initiative Management",
+      "STRATEGY INITIATIVE MANAGEMENT"
+    ],
+    "FINTECH and  Innovation": [
+      "HOD 's OFFICE",
+      "Innovation & Fintech Strategy",
+      "VASP & Fintech Supervision",
+      "Digital Exchanges",
+      "Commodities"
     ]
   };
 </script>
@@ -126,7 +281,7 @@
       const divisions = departmentDivisionMap[selectedDept] || [];
 
       // Clear previous options
-      divisionSelect.innerHTML = '<option value="">Select Division</option>';
+      divisionSelect.innerHTML = '<option value=""></option>';
 
       // Populate new options
       divisions.forEach(division => {
@@ -154,16 +309,36 @@
         <div class="col-md-3">
           <label for="department" class="form-label">Department</label>
           <select class="form-select" id="department" name="department" required>
-            <option value="">Select Department</option>
+            <option value=""></option>
             <option value="Derivatives and Risk Management">Derivatives and Risk Management</option>
+            <option value="Director General's Office">Director General's Office</option>
+            <option value="External Relations">External Relations</option>
             <option value="Finance and Accounts">Finance and Accounts</option>
+            <option value="Financial Standards and Corporate Governance">Financial Standards and Corporate Governance</option>
+            <option value="FINTECH and  Innovation">FINTECH and  Innovation</option>
+            <option value="Human Resources Management">Human Resources Management</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Internal Audit">Internal Audit</option>
+            <option value="Investment Management Services">Investment Management Services</option>
+            <option value="Market Development">Market Development</option>
+            <option value="Monitoring">Monitoring</option>
+            <option value="Nigerian Capital Market Institute">Nigerian Capital Market Institute</option>
+            <option value="Office of Secretary to the Commission">Office of Secretary to the Commission</option>
+            <option value="Office of The Chief Economist">Office of The Chief Economist</option>
+            <option value="Office of the Executive Commisioner, Corporate Services">Office of the Executive Commisioner, Corporate Services</option>
+            <option value="Office of the Executive Commissioner, Legal & Enforcement">Office of the Executive Commissioner, Legal & Enforcement</option>
+            <option value="Office of the Executive Commissioner, Operations">Office of the Executive Commissioner, Operations</option>
+            <option value="Procurement & Support Services">Procurement & Support Services</option>
+            <option value="Registration, Exchanges, Market Infrastruture">Registration, Exchanges, Market Infrastruture</option>
+            <option value="Securities & Investment Services">Securities & Investment Services</option>           
+            <option value="Strategy">Strategy</option>
           </select>
         </div>
 
         <div class="col-md-3">
           <label for="division" class="form-label">Division</label>
           <select class="form-select" id="division" name="division" required>
-            <option value="">Select Division</option>
+            <option value=""></option>
           </select>
         </div>
       </div>
